@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="login">
+      <h4>Login to Anonymous Messenger</h4>
+        <hr>
+              <form class="login-inner">
+              <input type="text" class="form-control email" [(ngModel)]="user_id" placeholder="Enter user id" [ngModelOptions]='{standalone: true}'>
+              <input type="password" class="form-control password" [(ngModel)]="password" placeholder="Password" [ngModelOptions]='{standalone: true}'>
+        <hr>    
+             <input class="btn btn-block btn-lg btn-success submit" (click)="onLogin(user_id,password)" type="button" value="Login">
+            
+              </form>
+
+        <input class="btn btn-sm btn-primary register" routerLink='/signup' type="button" value="New User">
+        <div *ngIf="!loginSuccess">
+          <h5>Invalid username/password</h5>
+        </div>
+        <div>
+        <hr>
+          <h4>Post an anonymous message</h4>  
+          <input type="text" class="form control email" [(ngModel)]="target_id" placeholder="Enter target user id" [ngModelOptions]='{standalone: true}'>
+          <input class="btn btn-block btn-lg btn-success submit" (click)="validateTarget(target_id)" type="button" value="Submit">
+          <div *ngIf="!targetValid">
+            <h5>No such user</h5>
+          </div>
+      </div>
+    </div>
+  </div>
+

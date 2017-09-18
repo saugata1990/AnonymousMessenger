@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="login">
+      <h4>Anonymous Messenger--Sign Up</h4>
+        <hr>
+              <form class="login-inner">
+                  <input type="text" class="form-control email" [(ngModel)]="user_name" placeholder="Enter name" [ngModelOptions]='{standalone: true}'>
+                  <input type="text" class="form-control email" [(ngModel)]="user_id" placeholder="Enter user id" [ngModelOptions]='{standalone: true}'>
+                  <input type="password" class="form-control password" [(ngModel)]="password" placeholder="Password" [ngModelOptions]='{standalone: true}'>
+            
+            <input class="btn btn-block btn-lg btn-success submit" (click)="onSignup(user_name,user_id,password)" type="button" value="Sign Up">
+          </form>
+        
+          <div *ngIf="userCreated" >
+            <h5>User created successfully</h5>
+          </div>
+          <div *ngIf="!userCreated && attempted" >
+            <h5>User already exists</h5>
+          </div>
+        
+    </div>
+  </div>

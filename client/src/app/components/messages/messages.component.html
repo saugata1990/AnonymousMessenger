@@ -1,0 +1,9 @@
+
+
+<h1>Welcome {{user_name}}</h1>
+<input class="btn btn-block btn-lg btn-success submit" type="button" (click)="onLogout()" value="Log out">
+
+<div *ngFor="let message of messages">
+    {{message}}
+</div>
+

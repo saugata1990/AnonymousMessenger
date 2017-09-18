@@ -1,0 +1,8 @@
+<div class="form-group">
+  <label for="postedMessage">Post your message here</label>
+  <textarea class="form-control" [(ngModel)]="postedMessage" rows="10" [ngModelOptions]='{standalone: true}'></textarea>
+  <input class="btn btn-block btn-lg btn-success submit" (click)="onPostMessage(postedMessage)" type="button" value="Post Message">
+  <div *ngIf="messageSuccess">
+    <h5>Message posted successfully</h5>
+  </div>
+</div>
